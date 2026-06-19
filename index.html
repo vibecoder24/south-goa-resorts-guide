@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A complete analysis of 11 South Goa resorts for a July monsoon family trip with 8 adults and 4 toddlers — food, beach access, monsoon activities, and baby support compared.">
+    <title>South Goa Resorts Guide - July Family Trip</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏖️</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        nav button {
+            background: white;
+            border: 2px solid #667eea;
+            color: #667eea;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        nav button:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        nav button.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .summary-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .summary-card.tier2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .summary-card.tier3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .summary-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 5px;
+        }
+
+        .summary-card .rating {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .summary-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .summary-card li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .summary-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .resort-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .resort-card {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .resort-card:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+        }
+
+        .resort-header {
+            background: #f8f9fa;
+            padding: 20px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .resort-header h3 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+        }
+
+        .resort-location {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .resort-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95em;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-weight: bold;
+        }
+
+        .resort-body {
+            padding: 20px;
+        }
+
+        .metric {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .metric:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .metric-label {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .metric-value {
+            color: #333;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .score {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .pros {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .pros strong {
+            color: #155724;
+        }
+
+        .cons {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .cons strong {
+            color: #856404;
+        }
+
+        .flags {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .flags strong {
+            color: #721c24;
+        }
+
+        .recommendation {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 10px;
+        }
+
+        .recommendation h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .recommendation ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .recommendation li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .recommendation li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border: none;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .monsoon-alert {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .monsoon-alert strong {
+            color: #1565c0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .resort-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                font-size: 0.9em;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav button {
+                width: 100%;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏖️ South Goa Resorts Guide</h1>
+            <p>Complete Analysis for July Family Trip with 4 Toddlers</p>
+        </header>
+
+        <nav>
+            <button class="nav-btn active" data-section="overview">Overview</button>
+            <button class="nav-btn" data-section="topresorts">Top Resorts</button>
+            <button class="nav-btn" data-section="allresorts">All 11 Resorts</button>
+            <button class="nav-btn" data-section="comparison">Comparison</button>
+            <button class="nav-btn" data-section="recommendations">Recommendations</button>
+        </nav>
+
+        <div class="content">
+            <!-- OVERVIEW SECTION -->
+            <div id="overview" class="section active">
+                <h2>Your Trip at a Glance</h2>
+                <p style="margin-bottom: 25px; font-size: 1.05em; color: #555;">
+                    <strong>Travelers:</strong> 8 adults + 4 two-year-olds (4 families)<br>
+                    <strong>When:</strong> July (Monsoon season)<br>
+                    <strong>Budget:</strong> ₹15,000/night per family<br>
+                    <strong>Key Needs:</strong> Beach access, kids play areas, baby-friendly amenities, indoor monsoon activities
+                </p>
+
+                <div class="monsoon-alert">
+                    <strong>⚠️ Monsoon Reality Check:</strong> July means heavy rain, rough beaches, and lots of indoor time. Pools, games rooms, and kids' play areas become MORE important than beach quality. Food quality matters because you'll eat at the resort for most meals.
+                </div>
+
+                <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 20px;">Key Findings from Review Analysis</h3>
+                <ul style="margin-left: 20px; color: #555;">
+                    <li><strong>Baby food support matters:</strong> Only Fairfield by Marriott and Holiday Inn explicitly mention this. With 4 toddlers, this is a game-changer.</li>
+                    <li><strong>Buggy/transport to beach is critical:</strong> Fairfield's free buggy service is unique and essential for monsoon with toddlers.</li>
+                    <li><strong>Games room beats beach in monsoon:</strong> Regenta Baywatch's games room (billiards, table tennis, kids' play) is invaluable during rainy days.</li>
+                    <li><strong>Room size varies wildly:</strong> Don't assume all "family" rooms are spacious. Fairfield and some others have "small but cozy" rooms.</li>
+                    <li><strong>Food repetition is a real problem:</strong> Salcete Beach Resort's menu repetition was mentioned in 4 out of 5 reviews. With picky toddlers, avoid.</li>
+                    <li><strong>Staff quality makes a difference:</strong> Baby food prep, special requests, problem-solving—personal attention matters more in monsoon when you're stuck at the property.</li>
+                </ul>
+            </div>
+
+            <!-- TOP RESORTS SECTION -->
+            <div id="topresorts" class="section">
+                <h2>Top 4 Resorts for Your Trip</h2>
+
+                <div class="summary">
+                    <div class="summary-card">
+                        <h3>🏆 #1: Fairfield by Marriott</h3>
+                        <div class="rating">4.6/5 • 2,466 reviews</div>
+                        <ul>
+                            <li>Best baby food support</li>
+                            <li>Free buggy to beach</li>
+                            <li>Clean, walkable beach</li>
+                            <li>Pool + kids area</li>
+                            <li>Marriott reliability</li>
+                        </ul>
+                    </div>
+
+                    <div class="summary-card tier2">
+                        <h3>🥈 #2: Holiday Inn</h3>
+                        <div class="rating">4.7/5 • 15,362 reviews</div>
+                        <ul>
+                            <li>Proven toddler experience</li>
+                            <li>Excellent breakfast</li>
+                            <li>Direct beach + grounds</li>
+                            <li>Spacious rooms</li>
+                            <li>IHG standards</li>
+                        </ul>
+                    </div>
+
+                    <div class="summary-card tier2">
+                        <h3>🥉 #3: Caravela</h3>
+                        <div class="rating">4.5/5 • 3,847 reviews</div>
+                        <ul>
+                            <li>Excellent food</li>
+                            <li>Private beach</li>
+                            <li>Huge grounds</li>
+                            <li>Multiple pools</li>
+                            <li>Interactive chefs</li>
+                        </ul>
+                    </div>
+
+                    <div class="summary-card tier3">
+                        <h3>💎 #4: Regenta Baywatch</h3>
+                        <div class="rating">3.9/5 • 5,324 reviews</div>
+                        <ul>
+                            <li>Games room (rain backup)</li>
+                            <li>Multi-level pools</li>
+                            <li>Kids' play area</li>
+                            <li>Quiet beach access</li>
+                            <li>Budget-friendly</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="color: #667eea; margin: 40px 0 20px;">Why These 4?</h3>
+                <p style="color: #555; margin-bottom: 20px;">
+                    These resorts stand out because they explicitly mention or demonstrate in reviews:
+                    <strong>baby amenities, good food, monsoon activities, family-friendly staff, and either direct beach access or practical solutions (like buggy service).</strong>
+                    The other 7 resorts have significant gaps—either mediocre food, no kids' facilities, isolation, room quality issues, or lack of toddler-specific support.
+                </p>
+            </div>
+
+            <!-- ALL RESORTS SECTION -->
+            <div id="allresorts" class="section">
+                <h2>All 11 Resorts Analyzed</h2>
+
+                <div class="resort-grid" id="resortGrid">
+                    <!-- Resorts will be inserted here by JavaScript -->
+                </div>
+            </div>
+
+            <!-- COMPARISON SECTION -->
+            <div id="comparison" class="section">
+                <h2>Side-by-Side Comparison</h2>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Resort</th>
+                            <th>Food Quality</th>
+                            <th>Beach Access</th>
+                            <th>Monsoon Activities</th>
+                            <th>Baby Support</th>
+                            <th>Overall Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Fairfield by Marriott</strong></td>
+                            <td>9/10 ⭐</td>
+                            <td>9/10 (Buggy)</td>
+                            <td>7.5/10</td>
+                            <td>9/10 ⭐⭐⭐</td>
+                            <td><span class="score">8.5/10</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Holiday Inn Resort</strong></td>
+                            <td>8.5/10</td>
+                            <td>8/10</td>
+                            <td>6/10</td>
+                            <td>8/10 ⭐</td>
+                            <td><span class="score">8.5/10</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Caravela Beach</strong></td>
+                            <td>9/10 ⭐</td>
+                            <td>9/10 (Private)</td>
+                            <td>6.5/10</td>
+                            <td>3/10</td>
+                            <td><span class="score">8/10</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Regenta Baywatch</strong></td>
+                            <td>5/10</td>
+                            <td>8.5/10</td>
+                            <td>8.5/10 ⭐⭐</td>
+                            <td>2/10</td>
+                            <td><span class="score">7.5/10</span></td>
+                        </tr>
+                        <tr style="background: #f8f9fa;">
+                            <td><strong>Beleza by the Beach</strong></td>
+                            <td>8/10</td>
+                            <td>8.5/10</td>
+                            <td>6.5/10</td>
+                            <td>9/10 (Free food)</td>
+                            <td><span class="score">7/10</span></td>
+                        </tr>
+                        <tr style="background: #f8f9fa;">
+                            <td><strong>Royal Orchid Beach</strong></td>
+                            <td>6/10</td>
+                            <td>8/10</td>
+                            <td>7/10</td>
+                            <td>2/10</td>
+                            <td><span class="score">6.5/10</span></td>
+                        </tr>
+                        <tr style="background: #f8f9fa;">
+                            <td><strong>Beira Mar Beach</strong></td>
+                            <td>Unknown</td>
+                            <td>9/10 ⭐⭐⭐</td>
+                            <td>5.5/10</td>
+                            <td>2/10</td>
+                            <td><span class="score">6/10</span></td>
+                        </tr>
+                        <tr style="background: #fff3cd;">
+                            <td><strong>Nanu Beach Resort</strong></td>
+                            <td>9/10</td>
+                            <td>7.5/10</td>
+                            <td>6/10</td>
+                            <td>2/10</td>
+                            <td><span class="score">4/10</span></td>
+                        </tr>
+                        <tr style="background: #fff3cd;">
+                            <td><strong>Salcete Beach Resort</strong></td>
+                            <td>3/10 ❌</td>
+                            <td>6/10</td>
+                            <td>4/10</td>
+                            <td>1/10</td>
+                            <td><span class="score">2/10</span></td>
+                        </tr>
+                        <tr style="background: #f8d7da;">
+                            <td><strong>C'Roque Beach Resort</strong></td>
+                            <td>5/10</td>
+                            <td>7/10 (Remote)</td>
+                            <td>3/10</td>
+                            <td>1/10</td>
+                            <td><span class="score">2/10</span></td>
+                        </tr>
+                        <tr style="background: #f8d7da;">
+                            <td><strong>Alagoa Resort</strong></td>
+                            <td>7/10</td>
+                            <td>4/10 (Too far)</td>
+                            <td>2/10</td>
+                            <td>1/10</td>
+                            <td><span class="score">1/10</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="background: #f0f4ff; padding: 20px; border-radius: 8px; margin-top: 30px;">
+                    <strong>📊 Legend:</strong><br>
+                    ⭐ = Strength | ❌ = Major issue | Highlighted rows = Consider with caution
+                </div>
+            </div>
+
+            <!-- RECOMMENDATIONS SECTION -->
+            <div id="recommendations" class="section">
+                <h2>Action Plan & Booking Strategy</h2>
+
+                <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 20px;">Option A: Best Choice for Toddlers 🏆</h3>
+                <div class="recommendation">
+                    <h3>Book: Fairfield by Marriott Benaulim (All 4 families)</h3>
+                    <p style="margin-bottom: 15px;"><strong>Why:</strong> Best baby food support + buggy service + clean beach + pool + kids area + Marriott reliability</p>
+                    <strong>Budget:</strong> ₹10-14k/family = ₹40-56k/night total<br>
+                    <strong>Contact:</strong> +91 832 287 4000
+
+                    <ul style="margin-top: 15px;">
+                        <li><strong>Confirm before booking:</strong> Room size (small but cozy—get photos), family bed configurations, buggy service in monsoon</li>
+                        <li><strong>Ask specifically:</strong> Baby food preparation (confirm they'll do fresh baby food daily)</li>
+                        <li><strong>Request:</strong> Family rooms or connecting rooms (not just queen beds)</li>
+                        <li><strong>Negotiate:</strong> July monsoon discount (properties offer 30-50% off)</li>
+                    </ul>
+                </div>
+
+                <h3 style="color: #667eea; margin-top: 40px; margin-bottom: 20px;">Option B: Split for Maximum Flexibility 🎯</h3>
+                <div class="recommendation" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <h3>Fairfield (2-3 families) + Regenta Baywatch (1-2 families)</h3>
+                    <p style="margin-bottom: 15px;"><strong>Why:</strong> Fairfield for baby food excellence + beach. Regenta for games room (essential monsoon backup).</p>
+                    <strong>Budget:</strong> ₹35-50k/night combined<br>
+                    <strong>Fairfield:</strong> +91 832 287 4000 | <strong>Regenta:</strong> (needs to be searched)
+
+                    <ul style="margin-top: 15px;">
+                        <li>Families can meet at either property</li>
+                        <li>Kids can use games room at Regenta on rainy days</li>
+                        <li>Beach access at Fairfield, indoor fun at Regenta</li>
+                        <li>Risk mitigation: if one property has issues, other is backup</li>
+                    </ul>
+                </div>
+
+                <h3 style="color: #667eea; margin-top: 40px; margin-bottom: 20px;">Option C: All-in-One Large Property 🏰</h3>
+                <div class="recommendation" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <h3>Caravela Beach Resort (All 4 families)</h3>
+                    <p style="margin-bottom: 15px;"><strong>Why:</strong> Excellent food, huge private grounds, multiple pools, everything in one place.</p>
+                    <strong>Budget:</strong> ₹48-64k/night total<br>
+                    <strong>Contact:</strong> +91 832 669 5000
+
+                    <ul style="margin-top: 15px;">
+                        <li><strong>Confirm:</strong> Which room category (quality varies—ask for suites)</li>
+                        <li><strong>Ask:</strong> Baby food preparation available?</li>
+                        <li><strong>Check:</strong> Kids' activities on rainy monsoon days</li>
+                        <li><strong>Best for:</strong> Families wanting everything in one place, less coordination needed</li>
+                    </ul>
+                </div>
+
+                <h3 style="color: #667eea; margin-top: 40px; margin-bottom: 20px;">❌ Avoid These</h3>
+                <div style="background: #f8d7da; padding: 20px; border-radius: 8px;">
+                    <strong>Salcete Beach Resort:</strong> Food repetition mentioned in 4/5 reviews—nightmare with 4 picky toddlers<br>
+                    <strong>C'Roque Beach Resort:</strong> Remote location + safety concerns (lights off at 11pm) + food quality issues<br>
+                    <strong>Alagoa Resort:</strong> Isolated + pool safety issues + 10-min beach walk (impossible with 4 toddlers)
+                </div>
+
+                <h3 style="color: #667eea; margin-top: 40px; margin-bottom: 20px;">Next Steps</h3>
+                <ol style="margin-left: 30px; color: #555; line-height: 2;">
+                    <li><strong>Call hotels directly</strong> (email is slow). Use the phone numbers above.</li>
+                    <li><strong>Mention:</strong> 4 families, 8 adults, 4 two-year-olds, July monsoon, group rate needed</li>
+                    <li><strong>Ask for:</strong> Monsoon discount, family room configurations, baby food support, photos of rooms</li>
+                    <li><strong>Get confirmation in writing</strong> before paying deposits</li>
+                    <li><strong>Book ASAP</strong> (July is monsoon off-season but families plan ahead)</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const resorts = [
+            {
+                name: "Fairfield by Marriott",
+                location: "Benaulim",
+                rating: "4.6",
+                reviews: "2,466",
+                food: "9/10",
+                beach: "9/10",
+                activities: "7.5/10",
+                overall: "8.5/10",
+                pros: ["Best baby food support (explicitly praised)", "Free buggy service to beach", "Clean, walkable beach (5 min)", "Pool + kids play area", "Marriott reliability"],
+                cons: ["Room size is small (but cozy)", "Only pool (no games room)"],
+                flags: ["Confirm family room configurations"]
+            },
+            {
+                name: "Holiday Inn Resort",
+                location: "Cavelossim",
+                rating: "4.7",
+                reviews: "15,362",
+                food: "8.5/10",
+                beach: "8/10",
+                activities: "6/10",
+                overall: "8.5/10",
+                pros: ["Proven toddler experience (celebrated 2-year-old)", "Excellent breakfast", "Direct beach + spacious grounds", "Staff helps with baby food"],
+                cons: ["Some bathroom/AC issues reported"],
+                flags: ["Ask for room photos before confirming"]
+            },
+            {
+                name: "Caravela Beach",
+                location: "Varca",
+                rating: "4.5",
+                reviews: "3,847",
+                food: "9/10",
+                beach: "9/10",
+                activities: "6.5/10",
+                overall: "8/10",
+                pros: ["Excellent food (interactive chefs)", "Private beach (safer)", "HUGE grounds", "Multiple pools"],
+                cons: ["Room quality varies", "No baby food service mentioned"],
+                flags: ["Confirm suite/deluxe room tier"]
+            },
+            {
+                name: "Regenta Baywatch",
+                location: "Sernabatim",
+                rating: "3.9",
+                reviews: "5,324",
+                food: "5/10",
+                beach: "8.5/10",
+                activities: "8.5/10",
+                overall: "7.5/10",
+                pros: ["Games room (billiards, table tennis)", "Multi-level pools", "Kids' play area", "Quiet Sernabatim Beach"],
+                cons: ["Food not a strength", "No baby food support"],
+                flags: ["Room damp issues—inspect first"]
+            },
+            {
+                name: "Beleza by the Beach",
+                location: "Betalbatim",
+                rating: "4.4",
+                reviews: "5,693",
+                food: "8/10",
+                beach: "8.5/10",
+                activities: "6.5/10",
+                overall: "7/10",
+                pros: ["Free baby food for toddlers ⭐", "2BR villas (good for 2 families)", "Kids play area", "Clean beach"],
+                cons: ["Smaller property", "Fewer activities than larger resorts"],
+                flags: ["Limited outdoor play space"]
+            },
+            {
+                name: "Royal Orchid Beach",
+                location: "Utorda",
+                rating: "4.3",
+                reviews: "3,004",
+                food: "6/10",
+                beach: "8/10",
+                activities: "7/10",
+                overall: "6.5/10",
+                pros: ["Very clean property", "Medium pool good for kids", "Vast lawn", "Beach shacks nearby"],
+                cons: ["Rooms feel dated", "Food repetitive", "Limited sun loungers"],
+                flags: ["May feel old/musty in monsoon"]
+            },
+            {
+                name: "Beira Mar Beach",
+                location: "Benaulim",
+                rating: "4.4",
+                reviews: "1,407",
+                food: "Unknown",
+                beach: "9/10",
+                activities: "5.5/10",
+                overall: "6/10",
+                pros: ["BEST beach access (< 1 min)", "Clean, quiet, peaceful", "Cottage-style privacy"],
+                cons: ["No kids activities mentioned", "Small property"],
+                flags: ["Lacks activity facilities for toddlers"]
+            },
+            {
+                name: "Nanu Beach Resort",
+                location: "Betalbatim",
+                rating: "4.4",
+                reviews: "6,994",
+                food: "9/10",
+                beach: "7.5/10",
+                activities: "6/10",
+                overall: "4/10",
+                pros: ["Excellent breakfast", "Very clean", "Good service"],
+                cons: ["Wedding venue focus", "No kids' facilities"],
+                flags: ["NOT family-oriented—skip for this trip"]
+            },
+            {
+                name: "Salcete Beach Resort",
+                location: "Colva",
+                rating: "4.2",
+                reviews: "1,521",
+                food: "3/10",
+                beach: "6/10",
+                activities: "4/10",
+                overall: "2/10",
+                pros: ["Spacious rooms", "Amazing pool"],
+                cons: ["REPETITIVE menu (4/5 reviews complain)", "Limited variety", "Not family-oriented"],
+                flags: ["❌ AVOID—food repetition is nightmare with picky toddlers"]
+            },
+            {
+                name: "C'Roque Beach Resort",
+                location: "Colva",
+                rating: "4.4",
+                reviews: "1,670",
+                food: "5/10",
+                beach: "7/10",
+                activities: "3/10",
+                overall: "2/10",
+                pros: ["Pretty beach", "Direct access"],
+                cons: ["Remote (requires jeep)", "Food quality issues", "Service bias reported"],
+                flags: ["❌ Lights off at 11pm—safety concern | Food made guest unwell"]
+            },
+            {
+                name: "Alagoa Resort",
+                location: "Betalbatim",
+                rating: "4.0",
+                reviews: "2,561",
+                food: "7/10",
+                beach: "4/10",
+                activities: "2/10",
+                overall: "1/10",
+                pros: ["Clean, peaceful", "Decent food"],
+                cons: ["Beach 10 min walk (too far)", "Isolated", "No kids activities"],
+                flags: ["❌ Pool has safety damage—guest got foot wound | Poor first aid response"]
+            }
+        ];
+
+        // Populate resort grid
+        const resortGrid = document.getElementById('resortGrid');
+        resorts.forEach(resort => {
+            const card = document.createElement('div');
+            card.className = 'resort-card';
+            card.innerHTML = `
+                <div class="resort-header">
+                    <h3>${resort.name}</h3>
+                    <div class="resort-location">${resort.location}</div>
+                    <div class="resort-rating">
+                        <span class="stars">${resort.rating}★</span>
+                        <span>(${resort.reviews} reviews)</span>
+                    </div>
+                </div>
+                <div class="resort-body">
+                    <div class="metric">
+                        <div class="metric-label">Food Quality <span class="score">${resort.food}</span></div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Beach Quality <span class="score">${resort.beach}</span></div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Monsoon Activities <span class="score">${resort.activities}</span></div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Overall Score <span class="score">${resort.overall}</span></div>
+                    </div>
+                    ${resort.pros.length ? `<div class="pros"><strong>✓ Pros:</strong><br>${resort.pros.join('<br>')}</div>` : ''}
+                    ${resort.cons.length ? `<div class="cons"><strong>⚠ Cons:</strong><br>${resort.cons.join('<br>')}</div>` : ''}
+                    ${resort.flags.length ? `<div class="flags"><strong>🚩 Flags:</strong><br>${resort.flags.join('<br>')}</div>` : ''}
+                </div>
+            `;
+            resortGrid.appendChild(card);
+        });
+
+        // Navigation
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const section = btn.getAttribute('data-section');
+
+                // Update active button
+                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Update active section
+                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                document.getElementById(section).classList.add('active');
+
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        });
+    </script>
+</body>
+</html>
